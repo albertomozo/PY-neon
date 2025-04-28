@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import psycopg2
 
 # Configuración de tu base de datos Neon
-DB_URL = "postgresql://neondb_owner:npg_gB5ntEd8omUC@ep-black-snowflake-a2vhtkkj-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require"
+DB_URL = "postgresql://nondb?sslmode=require"
 
 app = Flask(__name__)
 
