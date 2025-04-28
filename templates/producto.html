@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Propiedades del producto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body class="container">
+    <h2 class="my-4">Propiedades de {{ prod[0] }}</h2>
+    <ul class="list-group mb-3">
+        <li class="list-group-item"><strong>Fabricante:</strong> {{ prod[1] }}</li>
+        <li class="list-group-item"><strong>Modelo:</strong> {{ prod[2] }}</li>
+        <li class="list-group-item"><strong>Categoría:</strong> {{ prod[3] }}</li>
+        <li class="list-group-item"><strong>Subcategoría:</strong> {{ prod[4] or 'N/A' }}</li>
+        <li class="list-group-item"><strong>Precio:</strong> €{{ prod[5] }}</li>
+    </ul>
+    <h4>Atributos técnicos:</h4>
+    <ul class="list-group">
+        {% for atributo in atributos %}
+            <li class="list-group-item">
+                <strong>{{ atributo[0] }}:</strong> {{ atributo[1] }}
+            </li>
+        {% else %}
+            <li class="list-group-item">Sin atributos técnicos registrados.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Volver al catálogo</a>
+</body>
+</html>
